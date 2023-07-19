@@ -48,7 +48,7 @@ export const ConvertKG = () => {
     useLayoutEffect(changeLogic, [flags, density, thickness, width])
     
     return (
-        <div style={{marginLeft : "1rem", marginTop:"1rem", width : "350px"}}>
+        <div style={{marginLeft : "1rem", marginTop:"1rem", width : "300px"}}>
             <h4 style={{textAlign:"center"}}>Перевести кг в погонные или квадратные метры</h4>
             <div className="item">
                 <label htmlFor="thickness">Толщина, мкм</label>
