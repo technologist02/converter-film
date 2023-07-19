@@ -1,4 +1,4 @@
-import { useState, useLayoutEffect } from "react"
+import { useState, useLayoutEffect, useRef } from "react"
 
 export const ConvertKG = () => {
     const [thickness, setThickness] = useState()
@@ -11,22 +11,27 @@ export const ConvertKG = () => {
     const [lengthFocus, setLengthFocus] = useState(false)
     const [areaFocus, setAreaFocus] = useState(false)
     
+    
     const flags = [weightFocus, lengthFocus, areaFocus]
     let index = flags.findIndex(x => x === true)
 
+    const weigthRef = useRef(null)
+    const lengthRef = useRef(null)
+    const areaRef = useRef(null)
+
     const getLength = () => {
-        const result = weightFocus? Math.ceil(weight / (density * width * thickness ) * 1000000) : Math.ceil(area / (width / 1000))
-        isNaN(result)? setLength(0) : setLength(result)
+        const result = weightFocus? (weight / (density * width * thickness ) * 1000000) : (area / (width / 1000))
+        isNaN(result)? setLength(0) : setLength(result.toFixed(2))
     }
 
     const getArea = () => {
-        const result = weightFocus? Math.ceil(weight /(density * thickness) * 1000) : Math.ceil(length * (width / 1000))
-        isNaN(result)? setArea(0) : setArea(result)
+        const result = weightFocus? (weight /(density * thickness) * 1000) : (length * (width / 1000))
+        isNaN(result)? setArea(0) : setArea(result.toFixed(2))
     }
 
     const getWeight = () => {
-        const result = lengthFocus? Math.ceil(length * width * density * thickness / 1000000) : Math.ceil(area * thickness * density / 1000)
-        isNaN(result)? setWeight(0) : setWeight(result)
+        const result = lengthFocus? (length * width * density * thickness / 1000000) : (area * thickness * density / 1000)
+        isNaN(result)? setWeight(0) : setWeight(result.toFixed(2));
     }
 
     function changeLogic() {
@@ -43,7 +48,6 @@ export const ConvertKG = () => {
             default:
                 break;
         }
-        //console.log("changed");
     }
     useLayoutEffect(changeLogic, [flags, density, thickness, width])
     
@@ -84,7 +88,11 @@ export const ConvertKG = () => {
                     placeholder="1000"
                     value={weight}
                     onChange={(event) => setWeight(event.target.value)}
-                    onFocus={() => {setWeightFocus(true); setLengthFocus(false); setAreaFocus(false)}}
+                    onFocus={() => {setWeightFocus(true); setLengthFocus(false); setAreaFocus(false);
+                        lengthRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)";
+                        weigthRef.current.style.backgroundColor = "white"; 
+                        areaRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)"}}
+                    ref = {weigthRef}
                 />
             </div>
             <div className="item">
@@ -94,8 +102,13 @@ export const ConvertKG = () => {
                     placeholder="1000"
                     value={length}
                     onChange={(event) => setLength(event.target.value)}
-                    onFocus={() => {setWeightFocus(false); setLengthFocus(true); setAreaFocus(false)}}
-                    
+                    onFocus={() => {setWeightFocus(false);
+                        setLengthFocus(true);
+                        setAreaFocus(false);
+                        lengthRef.current.style.backgroundColor = "white"
+                        weigthRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)"; 
+                        areaRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)"}}
+                    ref = {lengthRef}
                 />
             </div>
             <div className="item">
@@ -105,8 +118,11 @@ export const ConvertKG = () => {
                     placeholder="1000"
                     value={area}
                     onChange={(event) => setArea(event.target.value)}
-                    onFocus={() => {setWeightFocus(false); setLengthFocus(false); setAreaFocus(true)}}
-                    
+                    onFocus={() => {setWeightFocus(false); setLengthFocus(false); setAreaFocus(true)
+                        lengthRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)"
+                        weigthRef.current.style.backgroundColor = "rgba(55, 255, 0, 0.459)"; 
+                        areaRef.current.style.backgroundColor = "white"}}
+                    ref = {areaRef}
             />
             </div>
         </div>
