@@ -8,29 +8,25 @@ export function Home() {
 
     return (
     <div>
-        <h3>Переводим метры в килограммы</h3>
-        <p>Для справки плотности некоторых пленок</p>
-        <div>
-            <table className=" table table-bordered" style={{width:"400px"}}>
-                <caption>Плотности некоторых видов полимерных пленок</caption>
-                <thead>
+        <table className=" table table-bordered" style={{maxWidth:"400px"}}>
+            <caption>Плотности некоторых видов полимерных пленок</caption>
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Материал</th>
+                    <th scope="col">Плотность, г/см3</th>
+                </tr>
+            </thead>
+            <tbody>
+                {polymersDensity.map(item => (
                     <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Материал</th>
-                        <th scope="col">Плотность, г/см3</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {polymersDensity.map(item => (
-                        <tr>
                         <th scope="row">{polymersDensity.indexOf(item) + 1}</th>
                         <td>{item[0]}</td>
                         <td>{item[1]}</td>
-                      </tr>
-                    ))}
-                </tbody>
-            </table>
-        </div>
+                    </tr>
+                ))}
+            </tbody>
+        </table>
     </div>
     )
 }

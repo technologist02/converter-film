@@ -7,9 +7,6 @@ export function Header(){
                 <div className="container-fluid">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <NavLink to="/" className="nav-link">Главная</NavLink>
-                        </li>
-                        <li className="nav-item">
                             <NavLink to="/converterKgtoMetres" className="nav-link">Перевести Кг в метры</NavLink>
                         </li>
                         <li className="nav-item">

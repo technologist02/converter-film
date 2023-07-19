@@ -11,9 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.roll {
+  display: grid;
+  gap: 5px 5px;
+  max-width: 400px;
+}
 .item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 1fr 1fr
+  
 }
 input {
   margin-bottom: 0.3rem;

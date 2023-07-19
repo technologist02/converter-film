@@ -36,7 +36,7 @@ export const RollDiameter = () => {
     useLayoutEffect(() => {getWeight(); getLength(); getArea()}, [thicknessFlim, width, density, diameterRoll, diameterSleeve, thicknessSleeve])
 
     return(
-        <div style={{marginLeft : "1rem", marginTop:"1rem", width : "300px"}}>
+        <div className="roll" style={{marginLeft : "0.5rem", marginTop:"1rem"}}>
             <h4 style={{textAlign:"center"}}>Вычислить вес и длину намотки по диаметру рулона</h4>
             <div className="item">
                 <label htmlFor="thickness">Толщина, мкм</label>
