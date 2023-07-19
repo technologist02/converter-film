@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/converter-film/static/css/main.b855a112.css",
-    "main.js": "/converter-film/static/js/main.28604da0.js",
+    "main.js": "/converter-film/static/js/main.ded6e25d.js",
     "index.html": "/converter-film/index.html",
     "main.b855a112.css.map": "/converter-film/static/css/main.b855a112.css.map",
-    "main.28604da0.js.map": "/converter-film/static/js/main.28604da0.js.map"
+    "main.ded6e25d.js.map": "/converter-film/static/js/main.ded6e25d.js.map"
   },
   "entrypoints": [
     "static/css/main.b855a112.css",
-    "static/js/main.28604da0.js"
+    "static/js/main.ded6e25d.js"
   ]
 }
