@@ -7,7 +7,7 @@ export function Home() {
     ]
 
     return (
-    <>
+    <div>
         <p>Это приложение предназначено для пересчета количества полимерной пленки в разные единицы измерения</p>
         <div>
             <table className=" table table-bordered" style={{width:"400px"}}>
@@ -30,6 +30,6 @@ export function Home() {
                 </tbody>
             </table>
         </div>
-    </>
+    </div>
     )
 }
