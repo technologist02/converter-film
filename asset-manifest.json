@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/converter-film/static/css/main.b855a112.css",
+    "main.js": "/converter-film/static/js/main.28604da0.js",
+    "index.html": "/converter-film/index.html",
+    "main.b855a112.css.map": "/converter-film/static/css/main.b855a112.css.map",
+    "main.28604da0.js.map": "/converter-film/static/js/main.28604da0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b855a112.css",
+    "static/js/main.28604da0.js"
+  ]
+}
